@@ -13,7 +13,7 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-function switchPlayer() {}
+function switchPlayer() { }
 // Starting conditions
 score0El.textContent = 0;
 score1El.textContent = 0;
@@ -52,7 +52,7 @@ btnHold.addEventListener('click', function () {
   //1. Add current score to active player's score
   scores[activePlayer] += currentScore;
   //2. Check if player's score is >= 100
-  document.getElementById(`current--${activePlayer}`).textContent =
+  document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
   // Finish the game
   // Switch to the next player
