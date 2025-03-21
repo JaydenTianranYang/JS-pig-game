@@ -54,10 +54,20 @@ btnRoll.addEventListener('click', function () {
 btnHold.addEventListener('click', function () {
   //1. Add current score to active player's score
   scores[activePlayer] += currentScore;
-  //2. Check if player's score is >= 100
+
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
-  // Finish the game
-  // Switch to the next player
-  switchPlayer();
+  //2. Check if player's score is >= 100
+  if (scores[activePlayer] >= 20) {
+    // Finish the game
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.add('player--winner');
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.remove('player--active');
+  } else {
+    // Switch to the next player
+    switchPlayer();
+  }
 });
